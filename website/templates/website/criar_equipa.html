@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load widget_tweaks %}
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        </div>
+            <span>Nome da equipa: </span>
+            {% render_field form.nome %}
+        </div>
+        <button onclick="{% url 'website/adicionar_membros' %}">Proximo</button>
+    </form>
+</body>
+</html>

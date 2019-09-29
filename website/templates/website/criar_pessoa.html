@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load widget_tweaks %}
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <div>
+            <span>Nome</span>
+            {% render_field form.nome %}
+        </div>
+        <div>
+            <span>Apelido</span>
+            {% render_field form.apelido %}
+        </div>
+        <div>
+            <span>Cargo</span>
+            {% render_field form.cargo %}
+        </div>
+        <button><a>Gravar</a></button>
+    </form>
+</body>
+</html>

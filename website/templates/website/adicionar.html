@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    {% csrf_token %}
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        {% for pessoas in pessoas %}
+            <div>
+                {{ pessoa.nome }}
+                <span>Adicionar</span>
+            </div>
+        {% endfor %}
+    </form>
+</body>
+</html>
