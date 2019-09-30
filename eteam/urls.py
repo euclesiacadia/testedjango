@@ -16,24 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from website.views import IndexTemplateView
-from website.views import PessoaListView
-from website.views import PessoaCreateView
-from website.views import EquipaListView
-from website.views import EquipaCreateView
-from website.views import MembrosCreateView
-#from website.views import MembrosUpdateView
-from website.views import MembrosDeleteView
 app_name = "website"
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexTemplateView.as_view(), name='index'),
-    path('pessoas/', PessoaListView.as_view(), name = 'website/lista_pessoas'),
-    path('equipas/', EquipaListView.as_view(), name='website/lista_equipas'),
-    path('pessoa/cadastrar', PessoaCreateView.as_view(), name = 'cadastrar_pessoa'),
-    path('equipa/criar/', EquipaCreateView.as_view(), name = 'website/criar_equipa'),
-    path('membros/adicionar/', MembrosCreateView.as_view(), name = 'website/adicionar_membros'),
-    path('membros/remover/<pk>', MembrosDeleteView.as_view(), name ='remover_membros'),
-]
+    path('', include('website.urls')),
+    ]

@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action="{% url 'index' %}">
+    <form method="post">
         {% csrf_token %}
         <div>
             <span>Nome</span>
@@ -20,7 +20,7 @@
             <span>Cargo</span>
             {% render_field form.cargo %}
         </div>
-        <button><a>Gravar</a></button>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>

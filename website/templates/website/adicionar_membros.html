@@ -7,11 +7,8 @@
 </head>
 <body>
     <form>
-        {% for pessoas in pessoas %}
-            <div>
-                {{ pessoa.nome }}
-                <span>Adicionar</span>
-            </div>
+        {% for pessoa in pessoas %}
+            <li>{{ pessoa.nome + pessoa.apelido }}<a href="{% url 'website:adiciona_membros', pk %}"> Adicionar</a></li>
         {% endfor %}
     </form>
 </body>
